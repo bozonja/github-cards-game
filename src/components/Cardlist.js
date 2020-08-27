@@ -21,9 +21,7 @@ const githubData = [
 
 const Cardlist = () => (
   <div>
-    <Card {...githubData[0]}/>
-    <Card {...githubData[1]}/>
-    <Card {...githubData[2]}/>
+     {githubData.map(profile => <Card {...profile}/>)}
   </div>
 );
 
