@@ -1,10 +1,11 @@
 import React from 'react';
+import axios from 'axios'
 
 class Form extends React.Component {
   state = {userName: ''};
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log(this.state.userName);
+    axios.get(`https://api.github.com/users/${'this.state.userName'}`)
   }
 
   render() {
