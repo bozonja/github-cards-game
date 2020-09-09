@@ -21,12 +21,17 @@ const githubData = [
   }
 ];
 
-function App() {
+function App(state) {
+
+  state = {
+    profiles: githubData
+  }
+
   return (
     <div className="App">
       <h1 className="header-title">Github profiles</h1>
       <Form />
-      <Cardlist profiles={githubData}/>
+      <Cardlist profiles={state.profiles}/>
     </div>
   );
 }
