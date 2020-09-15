@@ -3,13 +3,15 @@ import axios from 'axios'
 
 class Form extends React.Component {
   state = {userName: ''};
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
     event.preventDefault();
-    axios.get(`https://api.github.com/users/${'this.state.userName'}`)
+    const response = await 
+    axios.get(`https://api.github.com/users/${this.state.userName}`);
+    this.props.onSubmit(response.data);
   }
 
   render() {
-    return (
+    return ( 
       <form onSubmit={this.handleSubmit}>
         <input 
           placeholder="type github username..." 
